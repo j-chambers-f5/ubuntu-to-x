@@ -67,7 +67,7 @@ Description=My Job
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c "fuser -vkm /oldroot && umount -l /oldroot/ && qemu-img convert -f qcow2 -O raw /Arch-Linux-x86_64-cloudimg.qcow2 /dev/vda && reboot"
+ExecStart=/bin/bash -c "fuser -vkm /oldroot && sleep 5 && umount -l /oldroot/ && sleep 5 && qemu-img convert -f qcow2 -O raw /Arch-Linux-x86_64-cloudimg.qcow2 /dev/vda && sleep 5 && reboot"
 
 [Install]
 WantedBy=multi-user.target
